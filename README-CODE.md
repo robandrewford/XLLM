@@ -62,94 +62,94 @@
 
 ### enterprise/__init__.py
 
-- **Format**: Python package initialization
-- **Definition**: Enterprise module entry point
-- **Creation**: Created during enterprise module setup
-- **Usage**: Exports enterprise module components
+- __Format__: Python package initialization
+- __Definition__: Enterprise module entry point
+- __Creation__: Created during enterprise module setup
+- __Usage__: Exports enterprise module components
 
 ### enterprise/config.py
 
-- **Format**: Python configuration module
-- **Definition**: Centralizes enterprise settings
-- **Creation**: Created during enterprise module setup
-- **Usage**: Manages enterprise-specific configurations
+- __Format__: Python configuration module
+- __Definition__: Centralizes enterprise settings
+- __Creation__: Created during enterprise module setup
+- __Usage__: Manages enterprise-specific configurations
 
 ### enterprise/utils.py
 
-- **Format**: Python utility module
-- **Definition**: Enterprise-specific utility functions
-- **Creation**: Created during enterprise module setup
-- **Usage**: Provides shared enterprise functionality
+- __Format__: Python utility module
+- __Definition__: Enterprise-specific utility functions
+- __Creation__: Created during enterprise module setup
+- __Usage__: Provides shared enterprise functionality
 
 ### enterprise/backend.py
 
-- **Format**: Python processor
-- **Definition**: Core enterprise data processing
-- **Creation**: Created during enterprise module setup
-- **Usage**: Handles enterprise data ingestion and table generation
+- __Format__: Python processor
+- __Definition__: Core enterprise data processing
+- __Creation__: Created during enterprise module setup
+- __Usage__: Handles enterprise data ingestion and table generation
 
 ### enterprise/processor.py
 
-- **Format**: Python processor
-- **Definition**: Enterprise query processing
-- **Creation**: Created during enterprise module setup
-- **Usage**: Manages enterprise-specific query handling
+- __Format__: Python processor
+- __Definition__: Enterprise query processing
+- __Creation__: Created during enterprise module setup
+- __Usage__: Manages enterprise-specific query handling
 
 ### enterprise/user.py
 
-- **Format**: Python interface
-- **Definition**: End-user query interface
-- **Creation**: Created during enterprise module setup
-- **Usage**: Provides interactive enterprise query functionality
+- __Format__: Python interface
+- __Definition__: End-user query interface
+- __Creation__: Created during enterprise module setup
+- __Usage__: Provides interactive enterprise query functionality
 
 ### enterprise/dev.py
 
-- **Format**: Python interface
-- **Definition**: Developer testing interface
-- **Creation**: Created during enterprise module setup
-- **Usage**: Enables enterprise system testing and validation
+- __Format__: Python interface
+- __Definition__: Developer testing interface
+- __Creation__: Created during enterprise module setup
+- __Usage__: Enables enterprise system testing and validation
 
 ### enterprise/pdf_processor.py
 
-- **Format**: Python processor
-- **Definition**: PDF document processor
-- **Creation**: Created during enterprise module setup
-- **Usage**: Converts PDFs to enterprise repository format
+- __Format__: Python processor
+- __Definition__: PDF document processor
+- __Creation__: Created during enterprise module setup
+- __Usage__: Converts PDFs to enterprise repository format
 
 ## Data Flow
 
 ### Base System Flow
 
-1. **Raw Data Ingestion**
+1. __Raw Data Ingestion__
    - Source: Wolfram crawled data (crawl_final_stats.txt)
    - Processor: xllm6.py
    - Function: process_crawled_data()
 
-2. **Core Table Generation**
+2. __Core Table Generation__
    - Dictionary: Word-count pairs (xllm6_dictionary.txt)
    - URL Mapping: URL-to-ID mappings (xllm6_arr_url.txt)
    - Categorization: Word-to-category mappings (hash tables)
 
-3. **End-User Query Flow**
+3. __End-User Query Flow__
    - Table Loading: xllm6_short.py loads tables
    - Query Processing: User input processing
    - Result Generation: Formatted output
 
 ### Enterprise System Flow
 
-1. **Corporate Data Ingestion**
+1. __Corporate Data Ingestion__
    - Sources:
      - Repository files (repository.txt, repository2.txt, repository3.txt)
      - PDF documents (processed by pdf_processor.py)
    - Processor: backend.py
    - Function: generate_backend_tables()
 
-2. **Enterprise Table Generation**
+2. __Enterprise Table Generation__
    - Dictionary: Token-count pairs (backend_dictionary.txt)
    - Entity Mapping: Entity-ID mappings (backend_ID_*.txt)
    - Context Information: Contextual data (backend_hash_context*.txt)
 
-3. **Enterprise Query Flow**
+3. __Enterprise Query Flow__
    - Table Loading: user.py/dev.py loads tables
    - Query Processing: processor.py handles queries
    - Result Generation: Contextual results
@@ -218,29 +218,29 @@ entityID~~{title::value||category::value||tag_list::value||meta::value||descript
 
 ### Base System Validation
 
-1. **Data Processing Validation**
+1. __Data Processing Validation__
    - Verify table creation in /data/xllm6/
    - Check table structure and relationships
 
-2. **Query Functionality Test**
+2. __Query Functionality Test__
    - Verify table loading
    - Confirm response generation
 
 ### Enterprise System Validation
 
-1. **Repository Processing Test**
+1. __Repository Processing Test__
    - Verify backend table generation
    - Check table structure and content
 
-2. **PDF Conversion Test**
+2. __PDF Conversion Test__
    - Verify entity formation
    - Ensure backend processor compatibility
 
-3. **User Interface Test**
+3. __User Interface Test__
    - Test interactive query functionality
    - Verify real-time fine-tuning effects
 
-4. **Dev Mode Testing**
+4. __Dev Mode Testing__
    - Verify relevancy scoring
    - Check performance metrics
 
