@@ -14,7 +14,7 @@ The module is organized into several components:
 
 - `config.py` - Configuration settings and parameters
 - `utils.py` - Shared utility functions
-- `backend.py` - Backend table generation 
+- `backend.py` - Backend table generation
 - `processor.py` - Query processing and result generation
 - `pdf_processor.py` - Specialized PDF document processing
 
@@ -29,11 +29,12 @@ The module is organized into several components:
 
 To use the interactive query interface:
 
-```
+```shell
 python -m src.xllm6.enterprise.user
 ```
 
 Options:
+
 - `--generate` - Generate new backend tables instead of loading from disk
 - `--repo=PATH` - Path to primary repository file
 - `--repo2=PATH` - Path to secondary repository file
@@ -43,11 +44,12 @@ Options:
 
 To test the system with sample prompts:
 
-```
+```shell
 python -m src.xllm6.enterprise.dev
 ```
 
 Options:
+
 - `--generate` - Generate new backend tables instead of loading from disk
 - `--repo=PATH` - Path to primary repository file
 - `--repo2=PATH` - Path to secondary repository file
@@ -59,11 +61,12 @@ Options:
 
 To process a PDF document and convert it to repository format:
 
-```
+```shell
 python -m src.xllm6.enterprise.pdf_processor path/to/document.pdf
 ```
 
 Options:
+
 - `--output`, `-o` - Output path for the generated entities
 
 ## Documentation
