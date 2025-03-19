@@ -73,7 +73,7 @@ Options:
 
 For detailed documentation, refer to:
 
-- [XLLM Enterprise v2 Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/xllm-enterprise-v2.pdf)
+- [XLLM Enterprise Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/xllm-enterprise.pdf)
 - [LLM Scores Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/LLM-scores.pdf)
 
 The complete documentation is available in the book "Building Disruptive AI & LLM Apps from Scratch", available on [MLtechniques.com e-store](https://mltechniques.com/shop/).

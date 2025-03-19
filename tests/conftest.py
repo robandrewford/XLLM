@@ -1,10 +1,10 @@
-"""Configure pytest fixtures for the XLLM6 project."""
+"""Configure pytest fixtures for the XLLM project."""
 
 import os
 import tempfile
 from pathlib import Path
 
-import pytest
+import pytest # type: ignore
 
 
 @pytest.fixture

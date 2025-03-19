@@ -294,7 +294,7 @@ If you need to preserve existing data while running xllm6.py, it's recommended t
 
 ### Enterprise Process Flow
 
-#### xllm-enterprise-v2.py (Core Implementation)
+#### xllm-enterprise.py (Core Implementation)
 
 - Processes corporate document corpus data
 - Creates backend tables for enterprise knowledge retrieval
@@ -302,15 +302,7 @@ If you need to preserve existing data while running xllm6.py, it's recommended t
 - Handles entity extraction and relationship mapping
 - Designed for organizational knowledge management
 
-#### xllm_enterprise_util.py (Utility Library)
-
-- Provides shared functions for enterprise modules
-- Handles data cleaning and transformation
-- Implements key-value extraction algorithms
-- Manages frontend/backend table distillation
-- Centralizes common code to reduce duplication
-
-#### xllm-enterprise-v2-user.py (End-User Tool)
+#### xllm-enterprise-user.py (End-User Tool)
 
 - Uses pre-created tables from the backend
 - Provides interactive prompt-based interface
@@ -318,7 +310,7 @@ If you need to preserve existing data while running xllm6.py, it's recommended t
 - Implements real-time fine-tuning for query responses
 - Designed for daily use by non-technical stakeholders
 
-#### xllm-enterprise-v2-dev.py (Developer Tool)
+#### xllm-enterprise-dev.py (Developer Tool)
 
 - Loads test prompts from text files
 - Tests system against known answer sets
