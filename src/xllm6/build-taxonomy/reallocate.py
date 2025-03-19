@@ -1,7 +1,7 @@
 # reallocate.py: vincentg@mltechniques.com
 # see step 3 in project 8.2 in Projects4.pdf [download at https://mltblog.com/49w9omx]
 
-import requests
+import requests # type: ignore
 
 # ---[1] Functions to read the input tables (copied from xllm6_util.py)
 

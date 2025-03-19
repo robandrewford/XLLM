@@ -1,26 +1,101 @@
-The tech doc for <code>xllm-enterprise-v2.py</code> is <a href="https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/xllm-enterprise-v2.pdf">xllm-enterprise-v2.pdf</a>. The previous version (xllm-enterprise.py) is no longer maintained. I also created a library <code>xllm_enterprise_util.py</code>. Both <code>xllm-enterprise-v2-user.py</code> and <code>xllm-enterprise-dev.py</code> use that library. The former is essentially the same as xllm-enterprise-v2.py but much shorter since all the functions have been moved to the library. The latter also uses the same algorithms and architecture with recent additions (relevancy scores) but it serves a different purpose: testing a large number of prompts.
+# XLLM Enterprise Module
 
-All input data (repository.txt augmented with repository2.txt) comes from one part of an anonymized corporate corpus, dealing with one sub-LLM. The augmented data (concatetation of the two files) is in repository3.txt.
+This module provides corporate knowledge base functionality built on the XLLM framework. It includes tools for processing corporate document corpora, creating backend knowledge tables, and implementing real-time fine-tuning for enterprise question answering.
 
-<b>Notes</b>:
+## Overview
 
-<ul>
-<li>
-  <code>xllm-enterprise-v2-user.py</code> calls the real-time fine-tuning function. The user enters one prompt at a time, from the keyboard, including command options.
-</li>
-  <li>
-    <code>xllm-enterprise-v2-dev.py</code> does not call the real-time fine-tuning function. The test prompts with correct answers are loaded from a text file: <a href="https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/enterprise_sample_prompts.txt">enterprise_sample_prompts.txt</a>. A prompt and corresponding answer are in a same row, separated by " | ". For documentation, see <a href="https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/LLM-scores.pdf">LLM-scores.pdf</a>.
-  </li>
-</ul>
+The XLLM Enterprise module is an advanced implementation of XLLM technology specifically designed for corporate knowledge bases. Unlike the general-purpose XLLM6 module, it's optimized for organizational knowledge extraction, including specialized handling of technical documentation and multimodal content integration.
 
-<b>More documentation</b>: 
+## Module Structure
 
-All the material is documented in my book "Building Disruptive AI & LLM Apps from Scratch", abailable on MLtechniques.com e-store, <a href="https://mltechniques.com/shop/">here</a>. 
+The module is organized into several components:
 
-Additional resources:
+### Core Components
 
-<ul>
-  <li>
-See <a href="https://mltblog.com/47DisG5">here</a>.
-  </li>
-  <ul>
+- `config.py` - Configuration settings and parameters
+- `utils.py` - Shared utility functions
+- `backend.py` - Backend table generation 
+- `processor.py` - Query processing and result generation
+- `pdf_processor.py` - Specialized PDF document processing
+
+### User Interfaces
+
+- `user.py` - Interactive prompt-based interface for end users
+- `dev.py` - Testing and evaluation tool for developers
+
+## Usage
+
+### End User Interface
+
+To use the interactive query interface:
+
+```
+python -m src.xllm6.enterprise.user
+```
+
+Options:
+- `--generate` - Generate new backend tables instead of loading from disk
+- `--repo=PATH` - Path to primary repository file
+- `--repo2=PATH` - Path to secondary repository file
+- `--repo3=PATH` - Path to combined repository file
+
+### Developer Testing
+
+To test the system with sample prompts:
+
+```
+python -m src.xllm6.enterprise.dev
+```
+
+Options:
+- `--generate` - Generate new backend tables instead of loading from disk
+- `--repo=PATH` - Path to primary repository file
+- `--repo2=PATH` - Path to secondary repository file
+- `--repo3=PATH` - Path to combined repository file
+- `--prompts=PATH` - Path to prompt file (default: enterprise_sample_prompts.txt)
+- `--output=PATH` - Path to output file (default: xllm-enterprise-test-results.txt)
+
+### PDF Processing
+
+To process a PDF document and convert it to repository format:
+
+```
+python -m src.xllm6.enterprise.pdf_processor path/to/document.pdf
+```
+
+Options:
+- `--output`, `-o` - Output path for the generated entities
+
+## Documentation
+
+For detailed documentation, refer to:
+
+- [XLLM Enterprise v2 Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/xllm-enterprise-v2.pdf)
+- [LLM Scores Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm6/enterprise/LLM-scores.pdf)
+
+The complete documentation is available in the book "Building Disruptive AI & LLM Apps from Scratch", available on [MLtechniques.com e-store](https://mltechniques.com/shop/).
+
+## Repository Files
+
+The module uses three types of repository files:
+
+1. `repository.txt` - Primary repository file
+2. `repository2.txt` - Secondary repository file
+3. `repository3.txt` - Combined repository file (concatenation of 1 and 2)
+
+All input data comes from an anonymized corporate corpus, dealing with a sub-LLM.
+
+## Backend Tables
+
+The module generates and uses the following backend tables:
+
+- `backend_dictionary.txt` - Core dictionary of tokens with frequency counts
+- `backend_hash_pairs.txt` - Associations between tokens
+- `backend_hash_context*.txt` - Contextual information tables
+- `backend_ID_*.txt` - Entity ID mapping tables
+- `backend_embeddings.txt` - Semantic embeddings for tokens and entities
+
+## Notes
+
+- The user interface calls the real-time fine-tuning function, allowing for prompt-by-prompt interaction.
+- The developer interface loads test prompts from a file for batch testing and evaluation.
