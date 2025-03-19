@@ -13,16 +13,19 @@ The XLLM Enterprise module provides specialized functionality for corporate know
 ## Usage
 
 ### End-User Interface
+
 ```bash
 python -m src.xllm.enterprise.user
 ```
 
 ### Developer Interface
+
 ```bash
 python -m src.xllm.enterprise.dev
 ```
 
 ### PDF Processing
+
 ```bash
 python -m src.xllm.enterprise.pdf_processor path/to/document.pdf
 ```
@@ -30,4 +33,4 @@ python -m src.xllm.enterprise.pdf_processor path/to/document.pdf
 ## Documentation
 
 - [XLLM Enterprise Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm/enterprise/xllm-enterprise.pdf)
-- [LLM Scores Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm/enterprise/LLM-scores.pdf) 
+- [LLM Scores Documentation](https://github.com/VincentGranville/Large-Language-Models/blob/main/xllm/enterprise/LLM-scores.pdf)
